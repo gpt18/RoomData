@@ -3,6 +3,7 @@ package com.gproject.roomdata;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 //                new bgthread().start();
                 AppDatabase db = Room.databaseBuilder(getApplicationContext(),
                         AppDatabase.class, "room_db").allowMainThreadQueries().build();
-
                 UserDao userDao = db.userDao();
                 Boolean check = userDao.is_exist(Integer.parseInt(t3.getText().toString()));
 
@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), fetchData.class));
 
-                refresh();
             }
         });
     }
@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
     private void refresh() {
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "room_db").allowMainThreadQueries().build();
-
         UserDao userDao = db.userDao();
 
         List<User> users = userDao.getallusers();
