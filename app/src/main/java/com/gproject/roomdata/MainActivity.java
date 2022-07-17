@@ -16,7 +16,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     EditText t1, t2, t3;
-    Button b1, b2;
+    Button b1, b2, b3;
     TextView lbl, data;
 
 
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         data = findViewById(R.id.dataholder);
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
+        b3 = findViewById(R.id.b3);
 
         refresh();
 
@@ -69,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), fetchData.class));
+
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), viewPlayer.class));
 
             }
         });

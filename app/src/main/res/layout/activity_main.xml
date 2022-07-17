@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:ems="10"
+        android:inputType="number"
         android:hint="Record ID " />
 
     <EditText
@@ -56,6 +57,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fetch"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="video"
         android:padding="10dp"/>
 
     <ScrollView
